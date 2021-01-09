@@ -1,0 +1,26 @@
+DOM - The Document Object Model
+-------------------------------
+- Mutating a content of a website without changing the HTML of a website.
+- Basically, the work is done inside of the browser.
+
+- DOM represents the HTML elements as JS objects, for an example, if we have a <h1></h1> element in
+HTML then in DOM that element is represented as h1 object.
+- Every webpage when it is loading in a browser, the browser takes the HTML and CSS files and goes
+through them and creates for every element a JS object that represents it.
+- These JS objects also hold attributes of HTML and CSS elements, for an example the "src" of an image
+- This process is illustrated here: https://prnt.sc/wjnwa4
+- Example with real HTML: https://prnt.sc/wjnwif
+
+**************************************************************************
++ 1. Document
+
+
+
+
+**************************************************************************
++ Document +
+
+- Document is an object that is automatically created out of HTML and CSS elements.
+- It is the base object on which all HTML and CSS elements are represented as JS objects.
+- Of course, like everything else generally, the document object also has its own methods and properties
+that are created on the initialization.
