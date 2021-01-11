@@ -12,15 +12,54 @@ through them and creates for every element a JS object that represents it.
 - Example with real HTML: https://prnt.sc/wjnwif
 
 **************************************************************************
-+ 1. Document
-
++ 1. Document Object
++ 2. Selecting
 
 
 
 **************************************************************************
-+ Document +
+++++++++++++++++++++++++++++++++++++
++ Document Object+
 
 - Document is an object that is automatically created out of HTML and CSS elements.
 - It is the base object on which all HTML and CSS elements are represented as JS objects.
 - Of course, like everything else generally, the document object also has its own methods and properties
 that are created on the initialization.
+
+- All HTML elements can be found in the "all" property of the "document" object.
+- This "all" property is an array that holds HTML elements of the webpage, and user can access them
+through their index in the array.
+- Every HTML element is an object on its own and it has its own properties that we can then see and 
+access and manipulate if we want to.
+
+++++++++++++++++++++++++++++++++++++
++ Selecting +
+
+- Topic on how to select a specific HTML element / elements with JS
+
+1. "getElementById()" method:
+-----------------------------
+- On the "document" object there exists a method that enables user to select a specific HTML element 
+by his id.
+- This method is called "getElementById()" and it accepts a string parameter that is equal to some id
+attribute of some HTML element.
+- What is returned with this method is not the HTML element, the method returns the JS object created
+for that HTML element, basically the object that is part of the "document" object.
+
+2. "getElementsByTagName()" method:
+-----------------------------------
+- Also a method attached to the document object.
+- This method is used for finding all specific tags, meaning for an example if we want to get all "img"
+tags, we just put the "img" string as a argument of the method and it will return all "img" tags of the
+HTML file.
+- "getElementsById()" method will return multiple tags, most likely, and it will return them in something
+called the "HTML Collection".
+- "HTML Collection" is similar to array, items are indexed with number and you access them and mutate
+them with "[]" but it is not an array, its an array-like object.
+- Example of selecting all "img" tags and getting a HTML Collection of them: https://prnt.sc/wjwj1w
+
+3. "getElementsByClassName()" method:
+-------------------------------------
+- If we understand the logic in the 2 methods before this one is straight forward.
+- We select and return all objects that represent HTML elements of specific class.
+- It also returns the "HTML Collection" same as "getElementsByTagName()".
