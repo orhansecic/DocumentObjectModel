@@ -14,6 +14,8 @@ through them and creates for every element a JS object that represents it.
 **************************************************************************
 + 1. Document Object
 + 2. Selecting
++ 3. Selecting with querySelector() and quesrySelectorAll()
++ 4. Manipulate
 
 
 
@@ -63,3 +65,51 @@ them with "[]" but it is not an array, its an array-like object.
 - If we understand the logic in the 2 methods before this one is straight forward.
 - We select and return all objects that represent HTML elements of specific class.
 - It also returns the "HTML Collection" same as "getElementsByTagName()".
+
+++++++++++++++++++++++++++++++++++++
++ Selecting with querySelector() and quesrySelectorAll()+
+
+1. "querySelector()" method:
+----------------------------
+- querySelector() are used in the same way as getElement... methods
+- it basically returns a element that we selected.
+- the difference is that querySelector() is able to accept as argument all three values of three different
+getElement... methods but it only returns a single HTML element, it can never return a collection.
+- the element that is returned is the first element that satisfied the search.
+- document.querySelector("p") - will return the first p element of HTML document
+
+- important to note is that if we pass a class name or the id name as the argument we have to use 
+the CSS symbols for classes and ids, ".classname" or "#idname"
+
+2. "querySelectorAll()" method:
+-------------------------------
+- the same logic remains as it did with "querySelector()" just this method is able to return multiple
+HTML elements as a "Node List".
+- As far as I am able to understand is that "Node List" behaves the same way as "HTML Collection".
+
+++++++++++++++++++++++++++++++++++++
++ Manipulate +
+
+- Everything until now was to understand on how to select the specific element or group of elements 
+through the document object.
+- Impacting the webpage with JS.
+
+1. "innerText" property
+-----------------------
+- "innerText" is a property of most HTML elements that holds the value of text that is between the 
+opening and closing tags of HTML.
+- changing the value of this property will change the content that that HTML element represents.
+- For an example, document.querySelector("p").innerText = "KoKo", will make the paragraph tag have a
+content of "KoKo".
+
+2. "innerHTML" property
+-----------------------
+- it works the same way as "innerText" property just the biggest difference is that "innerHTML" can
+accept and read the html tags that we add to the value of "innerHTML" while "innerText" just treats 
+them like basic string.
+- Example, document.querySelector("p").innerHTML = "<b>KoKo</b>" will return the "KoKo" string bolded
+but if we used "innerText" it would return "<b>KoKo</b>" as the content of the paragraph.
+
+- Important -
+- we do not have to overwrite the value of property every time, we can also add to the property by using
+the "+=" operator, typical for strings when we want to add something to the current value.

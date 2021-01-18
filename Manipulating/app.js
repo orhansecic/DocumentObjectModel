@@ -21,3 +21,9 @@ for(let i = 0; i<foo.length; i++){
   };
 };
 */
+
+var items = document.querySelectorAll("p a");
+
+for(let item of items){
+  console.log(item.href);
+};
