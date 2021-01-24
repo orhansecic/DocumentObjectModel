@@ -11,6 +11,10 @@ h1 {
     color: #7b07ff;
 }
 
+.center{
+  text-align: center;
+}
+
 .border {
     border: 3px solid greenyellow;
 }
@@ -41,4 +45,11 @@ img.square {
 
 .example{
   color: red;
+}
+button{
+  margin: 20px;
+  padding: 10px;
+  border-radius: 6px;
+  background-color: greenyellow;
+  border: solid 2px;
 }

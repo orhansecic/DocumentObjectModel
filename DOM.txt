@@ -15,8 +15,12 @@ through them and creates for every element a JS object that represents it.
 + 1. Document Object
 + 2. Selecting
 + 3. Selecting with querySelector() and quesrySelectorAll()
-+ 4. Manipulate
-
++ 4. Manipulate (innerText, innerHTML)
++ 5. Attributes (getAttribute() , setAttribute())
++ 6. Changing Style
++ 7. classList
++ 8. Hierarchical Chain
++ 9. Creating Elements (append and appendChild)
 
 
 **************************************************************************
@@ -113,3 +117,175 @@ but if we used "innerText" it would return "<b>KoKo</b>" as the content of the p
 - Important -
 - we do not have to overwrite the value of property every time, we can also add to the property by using
 the "+=" operator, typical for strings when we want to add something to the current value.
+
+++++++++++++++++++++++++++++++++++++
++ Attributes +
+
+- attributes is a topic that is nothing new.
+- attributes were constantly used when creating and using HTML tags and also CSS.
+- attributes define some very important things, depending of the HTML tag of course, but in most cases
+they are very important at defining the HTML tag itself.
+- Easiest example is <img></img> tag has "src" attribute which defines the source of the image, basically
+what will be rendered on the screen.
+
+- As it was mentioned before, using any of the selecting methods it not only returns the object
+representation of the HTML tag but it also returns the properties of that object, which are basically
+different kinds of attributes that the HTML tag had.
+- We select those attributes like anything else, using the "." dot operator.
+- Changing the value of them changes the attribute, very straight forward.
+
++ There are two methods that are mostly used for setting and getting the attributes +
+
+1. getAttribute()
+2. setAttribute()
+-----------------
+
+1. getAttribute()
+-----------------
+
+- very simple and straight forward, it returns the value of the attribute that is passed as parameter.
+- its important to note that this method is used on an element, of course we need to select a element
+first then use this method and specify which attribute we want to return from this element.
+- Example of returning a source of a image - https://prnt.sc/x5ky8s
+
+2. setAttribute()
+-----------------
+
+- this method is used to set a specific attribute of a specific element.
+- same as getAttribute() method we first have to select the element and then setAttribute on it.
+- setAttribute() is a bit different because it accepts two parameters, first parameter specifies the
+attribute name, and the second the attribute value.
+- Example of setting the attribute of HTML tag -https://prnt.sc/x5l79x
+- Of course this can also be done on undefined attributes.
+
+++++++++++++++++++++++++++++++++++++
++ Changing Style +
+
+- changing style of an HTML tag is done with CSS, that is the recommended way of doing.
+- style can be manipulated in many different ways, meaning that location of CSS code can be found in
+different locations.
+- the most common one and also the one that is recommended for use is: creating a separate CSS file
+that we link to the HTML file that we want to style.
+- second one is using the inline style, style inside the HTML opening tags of HTML elements ( using
+the "style" attribute ) 
+- and the third option is using the <style></style> HTML tag
+
+- Every HTML element inside of the DOM has "style" property added to it.
+- This style property is an object that holds the properties of all possible styles of that HTML element
+- We just select any property of "style" object and mutate it how we want it, and the style will change
+- The problem is that "style" object, I mean his properties, only show values of inline styles, for
+an example, using the first method of adding CSS - we set the colour of h1 element to "red" and it does
+render with "red" colour but inside of "style" object attached to h1 HTML element the property colour
+of "style" object does not have a value.
+- It does have a value but it is not shown there, unfortunately, it only shows the inline styles.
+
+++++++++++++++++++++++++++++++++++++
++ classList +
+
+- classes are a great way of adding multiple lines of style to multiple HTML tags at once.
+- with DOM we are able to add class attributes to HTML elements.
+- setAttribute() and getAttribute() methods are the most basic way of setting the class attribute of 
+a HTML element and also getting the information what is the value of class attribute of elements.
+- but these two methods are not the most effective and efficient way of getting and setting that
+information, first of all it takes a long time to set it and also we are unable to set multiple names
+of classes easily - because in some cases we want the class attribute to have multiple values.
+
+- That is where "classList" object comes into play.
+- "classList" object is located on every HTML element and it has its own properties that enable us to
+do multiple different actions with classes.
+- "classList" holds the value of all classes of that specific HTML element, and its formed to a 
+array like list.
+- Example: -https://prnt.sc/xfyjre
+
+- Properties of "classList" can be seen here: -https://prnt.sc/xfymhw
+- The most basic ones and the most common ones are: 
+1. add - accepts the parameter of class name that will be added to the HTML element
+2. contains - returns the boolean value if the HTML element contains the class name
+3. remove - removes the class name that we passed as parameter to the method
+4. replace - accepts two parameter, the first one is the class name that we want to replace the second is the value that replaces it
+5. toggle - toggles the impact of class on the specific HTML element
+6. length - returns the length of the classList 
+-These of course are not the only ones.
+
+++++++++++++++++++++++++++++++++++++
++ Hierarchical Chain +
+
+- Everything we program in any programming language has a hierarchical chain that it follows.
+- In this case we are talking about the child and parent relationship between the HTML tags that we 
+create.
+- For an example, everything is a child of "<html>" tag, everything shown on screen is the child of
+"<body>" tag, while "<span>" is a child of "<p>" tag ( for an example ).
+- Now, DOM enables us to follow this chain of hierarchy and go upwards for an example.
+
+1. "parentElement"
+------------------
+- Every HTML element, has a "parentElement" property that returns the HTML element that is a parent 
+to that element.
+- Example of "parentElement": https://prnt.sc/xhzxuh
+
+2. "children"
+-------------
+- "children" property returns an array-like element that holds all children of the HTML element.
+- HTML elements only have one direct parent but can have multiple children.
+- We of course move through this array-like element with indexes.
+
+3. "previousElementSibling" and "nextElementSibling"
+---------------------------------------------------
+- it selects the next or previous sibling of the HTML element we are currently on.
+- siblings are just HTML elements in the same level of the hierarchical chain.
+- for an example, <p> has multiple <span> elements inside of it, paragraph is the parent to spans
+while spans are siblings to one another.
+
+- its very important to notice the "Element" part of the property because it will return the HTML
+element rendered on the webpage.
+- There is also the "previousSibling" and "nextSibling" without the "Element" but it can sometimes act
+a bit strange on the first glance, because it look at the webpage in the browser and returns the gaps
+between the images (for an example), basically anything that is shown on the page.
+- while "Element" focuses more on the things that we created with our HTML tags.
+
+++++++++++++++++++++++++++++++++++++++++++++++
++ Creating Elements (append and appendChild) +
+
+- DOM can also be used to directly create elements and show (append) them on the webpage.
+
+1. "createElement()"
+--------------------
+
+- createElement() is a method on the document object that accepts a parameter which is a HTML tag.
+- It will create a HTML element from that parameter, but it will not be shown on the webpage.
+- Of course, if we are creating an image or an anchor element we need to mutate some of its attributes,
+such as "src" or "href"
+
+- creating element with this method is just creating an element that is not shown on the webpage, it 
+is attached to the document but it does not have any parent nor child properties.
+- meaning it is not part of the hierarchical chain.
+- we add these elements to the hierarchical chain by using append and appendChild methods.
+
+2. "appendChild()"
+------------------
+
+- first we select the HTML element that we want to attach a child HTML element to.
+- then we use this method and pass it a argument, argument is the newly element that will become a child
+of the selected element.
+- for an example, we created an element with "createElement()" method and we want to show this element
+on a webpage, it means that it has to become a part of the hierarchical chain, we add it to the hierarchical
+chain by creating a parent/child relationship between this newly created element and element on the 
+webpage. 
+
+- Important to note is that "appendChild()" adds the element as the last child of the parent element,
+meaning it will be rendered last.
+
+3. "append()"
+-------------
+
+-"append()" is very similar to the "appendChild()" just it is able to accept strings as arguments and
+also it is able to accept multiple arguments that will attach as last children to the parent element.
+
+4. "prepend()"
+--------------
+- same as "append()" just it sets the element as the first child of that parent element.
+
+++ Honourable Mentions to Research ++
+1. insertAdjacentElement()
+2. after()
+3. before()
