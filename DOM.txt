@@ -21,6 +21,9 @@ through them and creates for every element a JS object that represents it.
 + 7. classList
 + 8. Hierarchical Chain
 + 9. Creating Elements (append and appendChild)
++ 10. Removing Elements (remove() and removeChild())
+------------------Events----------------------------
++ 11. Events
 
 
 **************************************************************************
@@ -275,6 +278,8 @@ webpage.
 - Important to note is that "appendChild()" adds the element as the last child of the parent element,
 meaning it will be rendered last.
 
+- Example: https://prnt.sc/xlmwy4
+
 3. "append()"
 -------------
 
@@ -289,3 +294,47 @@ also it is able to accept multiple arguments that will attach as last children t
 1. insertAdjacentElement()
 2. after()
 3. before()
+
+++++++++++++++++++++++++++++++++++++++++++++++
++ Removing Elements (remove() and removeChild()) +
+
+1. "removeChild()"
+------------------
+
+- method used for removing children of selected element.
+- the child is passed as an argument to the method.
+
+2. "remove()"
+-------------
+
+- remove() method that is used on the element that we want to remove.
+- it does not accept any parameters, it just removes the element that it invoked the method.
+
+++++++++++++++++++++++++++++++++++++++++++++++
++ Events +
+
+- key for creating interactive websites
+- creating a response to what user is doing.
+- click, double-click, copy, paste, drag, drop, scroll, hover, keyboard clicks...
+
+1. Inline Events 
+
+- inline events is the first method of implementing event handlers.
+- it is not the best way of implementing events and event handlers into the HTML and CSS.
+- it is basically the same thing as implementing inline style.
+- which is adding the "js" code in the opening tags of HTML element.
+
+- This is not the best way of implementing events, because first of all the code looks messy, its 
+very hard to find mistakes, because the lines of code are very long.
+
+2. Function Expressions
+
+- second method is also not the best method for implementing events and event handlers, but it is more
+common then the inline events.
+- It uses separate "js" file, which is great, but it fully implements the event handler inside of it.
+- by selecting the HTML element on which we want to have the event handler and then selecting the 
+event handler (all event handlers are just properties of HTML elements) and setting the value of event
+handler to some function.
+- Example: https://prnt.sc/xq2dph
+
+
