@@ -8,13 +8,15 @@
 </head>
 
 <body>
-    <h1>Events</h1>
+    <h1 onmouseover="appearIMG()" onmouseout="disappearIMG()" style="display: inline-block;">Events</h1>
 
-    <button type="button" name="button">Night Mode</button>
+    <button type="button" name="button" id="hello">Night Mode</button>
     <button type="button" name="button">Light Mode</button>
     <button type="button" name="button">Light Mode</button>
     <button type="button" name="button">Light Mode</button>
     <button type="button" name="button">Light Mode</button>
+
+    <button type="button" name="button" onclick="twist(), shout()">Twist and Shout</button>
 
 
     <div class="section">
@@ -22,6 +24,8 @@
       <input id = "color" type="text" name="" value="" style="display: block;">
       <button type="button" name="button" onclick = "background()">Submit</button>
     </div>
+
+    <img src="https://miro.medium.com/max/1200/1*mk1-6aYaf_Bes1E3Imhc0A.jpeg" alt="baby-yoda" style="width: 500px; height: 400px; display: none">
 
 
    <script src="app.js"></script>

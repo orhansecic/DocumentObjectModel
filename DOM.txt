@@ -24,6 +24,7 @@ through them and creates for every element a JS object that represents it.
 + 10. Removing Elements (remove() and removeChild())
 ------------------Events----------------------------
 + 11. Events
++ 12. Amazing Project - Random Colour Changer
 
 
 **************************************************************************
@@ -318,6 +319,7 @@ also it is able to accept multiple arguments that will attach as last children t
 - click, double-click, copy, paste, drag, drop, scroll, hover, keyboard clicks...
 
 1. Inline Events 
+----------------
 
 - inline events is the first method of implementing event handlers.
 - it is not the best way of implementing events and event handlers into the HTML and CSS.
@@ -328,6 +330,7 @@ also it is able to accept multiple arguments that will attach as last children t
 very hard to find mistakes, because the lines of code are very long.
 
 2. Function Expressions
+-----------------------
 
 - second method is also not the best method for implementing events and event handlers, but it is more
 common then the inline events.
@@ -336,5 +339,23 @@ common then the inline events.
 event handler (all event handlers are just properties of HTML elements) and setting the value of event
 handler to some function.
 - Example: https://prnt.sc/xq2dph
+
+3. "addEventListener()"
+-----------------------
+
+- "addEventListener()" is a method that adds the event listener to any element that was selected.
+- we select the HTML element first and then call the method "addEventListener()" that all HTML elements
+have.
+- "addEventListener()" accepts two parameters, first is the "string" name of the event ( onclick is "click")
+while the second parameter is the already defined function that we just call without invoking it 
+(without the "()") or we define the function on the fly.
+-Example with a h1 HTML element and click event with twist function - https://prnt.sc/xrtvvr
+
+- with "addEventListener()" method we can add multiple functions to the event listener, just repeating
+the call for the "addEventListener()" and changing the parameters, parameters will just stack in the 
+HTML element.
+
+- addEventListener() method has some interesting parameters that we can pass to it, if interested it
+can be found on the MDN.
 
 
