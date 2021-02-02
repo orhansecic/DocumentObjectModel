@@ -1,22 +1,28 @@
-const makeRandColor = () => {
-    const r = Math.floor(Math.random() * 255);
-    const g = Math.floor(Math.random() * 255);
-    const b = Math.floor(Math.random() * 255);
-    return `rgb(${r}, ${g}, ${b})`;
+//button event
+var button = document.querySelector("button");
+
+button.addEventListener("dblclick", foo);
+
+function foo(e){
+  console.log(e);
 }
 
-const buttons = document.querySelectorAll('button');
+//input event
+var input = document.querySelector("input");
 
-for (let button of buttons) {
-    button.addEventListener('click', colorize)
+input.addEventListener("keydown", function(e){
+  if(e.key === "l"){
+    this.style.width = "";
+  }else if(e.key === "s"){
+    this.style.width = "10px";
+  };
+});
+
+function example(){
+  console.log("Radi!");
 }
 
-const h1s = document.querySelectorAll('h1');
-for (let h1 of h1s) {
-    h1.addEventListener('click', colorize)
-}
-
-function colorize() {
-    this.style.backgroundColor = makeRandColor();
-    this.style.color = makeRandColor();
-}
+document.querySelectorAll("button")[0].addEventListener("click", function(){
+  body.style.backgroundColor = input.value;
+});
+var body = document.querySelector("body");

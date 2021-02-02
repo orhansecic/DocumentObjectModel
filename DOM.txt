@@ -25,6 +25,10 @@ through them and creates for every element a JS object that represents it.
 ------------------Events----------------------------
 + 11. Events
 + 12. Amazing Project - Random Colour Changer
++ 13. Events and The Keyword "This"
++ 14. Event Object and preventDefault()
++ 15. Keyboard Events - Video 261
++ 16. Form Events - Video 262
 
 
 **************************************************************************
@@ -269,7 +273,7 @@ is attached to the document but it does not have any parent nor child properties
 ------------------
 
 - first we select the HTML element that we want to attach a child HTML element to.
-- then we use this method and pass it a argument, argument is the newly element that will become a child
+- then we use this method and pass it an argument, argument is the newly element that will become a child
 of the selected element.
 - for an example, we created an element with "createElement()" method and we want to show this element
 on a webpage, it means that it has to become a part of the hierarchical chain, we add it to the hierarchical
@@ -280,6 +284,9 @@ webpage.
 meaning it will be rendered last.
 
 - Example: https://prnt.sc/xlmwy4
+
+- IMPORTANT - appendChild() method only accepts objects as parameters, meaning only accepts HTML elements
+nothing else, not even a variable with a string or number value inside of it.
 
 3. "append()"
 -------------
@@ -358,4 +365,90 @@ HTML element.
 - addEventListener() method has some interesting parameters that we can pass to it, if interested it
 can be found on the MDN.
 
+++++++++++++++++++++++++++++++++++++++++++++++
++ Events and The Keyword "This" +
 
+- As we already know before the keyword "This" can be a bit tricky, because it changes its value
+depending of where it is located. In what execution context it is.
+- In DOM, specifically when we are talking about events, this keyword is used to point to the HTML 
+element that has the event listener on it.
+
+- Example: https://prnt.sc/xx5myb
+
+++++++++++++++++++++++++++++++++++++++++++++++
++ Event Object and preventDefault()+
+
+- Event object is a object that is created by default and passed to the callback function of
+addEventListener() method.
+- This event has to be named by developer, meaning that we need to define it in the argument/parameter
+brackets of the function, so we have a name that we can point to.
+- This event object holds all important information about the event that happened, for an example the
+click or double click that user made. Furthermore, it holds also some information about the whole event
+from the click to the response.
+
+- Example: https://prnt.sc/xxe1pe
+- in the example I defined this Event Object as "e" and just print it out in the console, we can see
+that it has many different properties that hold the information about the event that has happened on
+this HTML element and that Event Listener responded to.
+
+- As it was mentioned before, the Event Object's scope of properties and information that he holds
+does not stop just at the event that some user did. Meaning it does not have only information about
+the click itself, but it also has some information about the eventHandler and also the response to 
+the event itself.
+- One of the methods on the Event Object is the "preventDefault()" method that prevents the default
+behaviour of the eventHandler that we added to the "button" for an example ( default behaviour of a 
+button would be click event if we added the click event to it )
+
+++++++++++++++++++++++++++++++++++++++++++++++
++ Keyboard Events +
+
+- Keyboard Events are events that are happening on the keyboard and the event handler is listening
+for them and of course responding to them.
+- Keyboard is a bit specific way of inputting, it is divided into "key"s ( dugme na tastaturi ) and
+every "key" has a "keycode" (keycode is the location of that specific key on the keyboard - "left alt")
+- Furthermore, through the event listeners we can see that the key presses are divided into pressing
+down and releasing the key.
+
+1. "keydown" - event listener that is looking for event of pressing a keyboard key in the HTML element on 
+which the event listener is.
+2. "keyup" - keydown is when the button is pressed, keyboard button going down, while the keyup is
+when the keyboard button is going up.
+- Very straight forward and easy to understand.
+- Very important to note is that these two event listeners will record any kind of button press on
+the HTML element that it is attached to, it does not matter if its something visible as a letter in
+the "input" tag or a ctrl press. All of them will be recorded as a event.
+
+- These new events are used in the example of explaining the Event Object further.
+- For a "keydown" and "keyup" the event object has properties that record what key was pressed.
+- "key" and "code" are those properties that tell you what key was pressed.
+- Example: https://prnt.sc/xxf7v8
+
+++++++++++++++++++++++++++++++++++++++++++++++
++ Form Events +
+
+- <form> </form> is a HTML tag that is used for creating a section on your webpage that is used for
+collecting data from the user.
+- inside of the "form" HTML tag there are different HTML tags that we can use, the most common ones 
+are <input></input> that is used for creating a input field for user to input some information, and
+almost always next to the "input" tag is the <label></label> that is basically just a simple "span"
+but it is used in the "form" HTML tag.
+
+- Same as every other HTML element in the DOM and JS, "form" has its own event handlers that respond
+to the specific events that are happening to him.
+- These event handlers are of course inside the attributes of this HTML element.
+
+- Event that was used in the Video tutorial was the "submit" event that submits the data of the form
+to the specific endpoint (this endpoint is specified in the action attribute of the "form")
+- In this video the event's method preventDefault() was used to prevent this transfer of data to the
+endpoint.
+
+- Every form HTML element has a specific property inside of it called "elements" that shows the 
+HTML collection of all elements that a form has. 
+- Basically, it shows the children inside of the form HTML element.
+- Important to note is that all children of the form are shown twice, if we used the "name" attribute
+of all elements inside the form. That is why we are able to call them by their names and not by their
+indexes.
+
+- Example of selecting the "username" input HTML element inside of the form called "tweetForm" - https://prnt.sc/y06dz2
+- When we select the element, in this case the input HTML element, we of course then can access his
+attributes, the attributes that the input HTML element normally has ( like "value" attribute).
