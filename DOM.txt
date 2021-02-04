@@ -29,7 +29,9 @@ through them and creates for every element a JS object that represents it.
 + 14. Event Object and preventDefault()
 + 15. Keyboard Events - Video 261
 + 16. Form Events - Video 262
-
++ 17. Input Events
++ 18. Event Bubbling and e.stopPropagation()
++ 19. Event Delegation
 
 **************************************************************************
 ++++++++++++++++++++++++++++++++++++
@@ -46,7 +48,7 @@ through their index in the array.
 - Every HTML element is an object on its own and it has its own properties that we can then see and 
 access and manipulate if we want to.
 
-++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++ 
 + Selecting +
 
 - Topic on how to select a specific HTML element / elements with JS
@@ -452,3 +454,53 @@ indexes.
 - Example of selecting the "username" input HTML element inside of the form called "tweetForm" - https://prnt.sc/y06dz2
 - When we select the element, in this case the input HTML element, we of course then can access his
 attributes, the attributes that the input HTML element normally has ( like "value" attribute).
+
+++++++++++++++++++++++++++++++++++++++++++++++
++ Input Events +
+
+1. "change" event
+------------------
+- on the "input" HTML element there exists a event handler called "onchange" or just "change" if we 
+are using the eventListener. 
+- it is listening for the change in the value attribute of the input HTML element
+- Very IMPORTANT, the response to the event that we specified with the function will execute only
+when the input field is left by the user. Do not get confused why nothing happens when we are changing
+the value of input we just have to leave the input field for the response function to invoke.
+
+2. "input" event
+-----------------
+- input event is also the event of the input HTML element and it also listens for changes in the 
+value attribute of the input HTML element, just it executes the function every time the change is made
+in real time.
+- it does not wait for the user to click away from the input field.
+
+++++++++++++++++++++++++++++++++++++++++++++++
++ Event Bubbling and e.stopPropagation()+
+
+- event bubbling is basically event nesting.
+- when we have multiple HTML elements with same event (onclick) and these HTML elements are inside of 
+one another.
+- what basically happens, is that all of them will be triggered starting from the HTML element that
+user pressed and continuing to move to the outside layers of hierarchy.
+
+
++ e.stopPropagation()
+-------------------
+- if we have a button inside of div and we set that div has a click event that makes display:none 
+while a click on button changes the background colour.
+- if we press the button also the div event will trigger, if we do not want that to happen, we can use
+the method on Event Object called stopPropagation() that stops the execution of other events which are
+parents to this HTML element.
+
+++++++++++++++++++++++++++++++++++++++++++++++
++ Event Delegation +
+
+- Event Delegation is adding event handler to multiple events at once through their parent element.
+- If we have "<ui></ui>" which has list items inside of it, we can add a remove feature to those list 
+items through the unordered list tag.
+- We do this by using the property on the Event Object called target.
+- this property has a value of HTML element inside of it that was clicked ( or that basically had event
+happen to it )
+- Example: https://prnt.sc/y989bu
+- We added to the li of "tweetContaienr" ul a feature to remove itself on click, by aiming at the li
+with the target property of Event Object.
