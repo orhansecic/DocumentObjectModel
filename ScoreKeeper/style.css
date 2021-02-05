@@ -1,0 +1,34 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container-main{
+   margin: auto;
+   width: 50%;
+   text-align: center;
+   padding: 20px;
+}
+#greenBtn{
+    padding: 10px 0;
+    width: 32%;
+    border-radius: 6px;
+    background-color: #00cba8;
+    color: white;
+}
+#blueBtn{
+    padding: 10px 0;
+    width: 32%;
+    border-radius: 6px;
+    background-color: #2b8dd6;
+    color: white;
+}
+#redBtn{
+    padding: 10px 0;
+    width: 32%;
+    border-radius: 6px;
+    background-color: #ee3355;
+    color: white;
+}
+img{
+    width: 100%;
+}
