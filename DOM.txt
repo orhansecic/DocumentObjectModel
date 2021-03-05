@@ -358,7 +358,7 @@ have.
 - "addEventListener()" accepts two parameters, first is the "string" name of the event ( onclick is "click")
 while the second parameter is the already defined function that we just call without invoking it 
 (without the "()") or we define the function on the fly.
--Example with a h1 HTML element and click event with twist function - https://prnt.sc/xrtvvr
+-Example with a h1 HTML element and click event with "twist" function - https://prnt.sc/xrtvvr
 
 - with "addEventListener()" method we can add multiple functions to the event listener, just repeating
 the call for the "addEventListener()" and changing the parameters, parameters will just stack in the 
@@ -418,7 +418,7 @@ when the keyboard button is going up.
 - Very straight forward and easy to understand.
 - Very important to note is that these two event listeners will record any kind of button press on
 the HTML element that it is attached to, it does not matter if its something visible as a letter in
-the "input" tag or a ctrl press. All of them will be recorded as a event.
+the "input" tag or a "ctrl" press. All of them will be recorded as a event.
 
 - These new events are used in the example of explaining the Event Object further.
 - For a "keydown" and "keyup" the event object has properties that record what key was pressed.
